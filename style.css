@@ -1,0 +1,373 @@
+/* GLOBALS */
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* TEXT */
+
+--Pale-Violet/*(sub-heading at the top of the app UI)*/: hsl(276, 100%, 81%);
+--Moderate-Violet/*(chat on the left)*/: hsl(276, 55%, 52%);
+--Desaturated-Dark-Violet/*(chat on the right)*/: hsl(271, 15%, 43%);
+--Grayish-Blue/*(placeholder text)*/: hsl(206, 6%, 79%);
+--Very-Dark-Desaturated-Violet/*(main heading)*/: hsl(271, 36%, 24%);
+--Dark-Grayish-Violet/*(paragraph)*/: hsl(270, 7%, 64%);
+
+/* GRADIENT */
+
+/* These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient: */
+
+--Light-Magenta: hsl(293, 100%, 63%);
+--Light-Violet: hsl(264, 100%, 61%);
+
+/* SECONDARY */
+
+--White: hsl(0, 0%, 100%);
+--Light-Grayish-Violet/*(app background)*/: hsl(270, 20%, 96%);
+--Very-Dark-Desaturated-Violet/*(submit button background)*/: hsl(271, 36%, 24%);
+--Very-Light-Magenta/*(radio button outline)*/: hsl(289, 100%, 72%);
+}
+
+/* WIDTH */
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+/* GLOBALS */
+.project{
+}
+.project .container{
+    width: 1440px;
+    height: 100vh;
+    margin-left: auto;
+    margin-right:auto;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--Light-Grayish-Violet);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width:767px){
+    .project .container{
+        width: 375px;
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+.project .container::before,
+.project .container::after{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    z-index: -1;
+}
+.project .container::before{
+    left: -100px;
+    top: 0;
+    background-image: linear-gradient(to bottom , var(--Light-Magenta), var(--Light-Violet) );
+    border-bottom-right-radius:300px;
+    border-bottom-left-radius: 300px;
+}
+@media(max-width:767px){
+    .project .container::before{
+        width: 70%;
+        top: -200px;
+    }
+}
+.project .container::after{
+    right: -100px;
+    bottom: 0;
+    background-color: hsl(270, 20%, 94%);
+    border-top-right-radius:300px;
+    border-top-left-radius: 300px;
+}
+@media(max-width:767px){
+    .project .container::after{
+        width: 70%;
+        bottom: -200px;
+    }
+}
+.project .container .padding{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:100px;
+}
+@media(max-width:767px){
+    .project .container .padding{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.project .design{
+    
+}
+.project .design .phone{
+    background-color: var(--Light-Grayish-Violet);
+    width: 270px;
+    border: 10px solid white;
+    border-radius: 30px;
+    box-shadow: 5px 0px 20px #6666;
+}
+@media(max-width:767px){
+    .project .design .phone{
+        
+    }
+}
+.project .design .phone header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    padding-top: 30px;
+    background-image: linear-gradient(to left , var(--Light-Magenta), var(--Light-Violet) );
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+}
+.project .design .phone header::before{
+    content: "";
+    position: absolute;
+    background-color:white;
+    width: calc(100% - 100px);
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.project .design .phone header .left-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.project .design .phone header .left-side .arrow i{
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+}
+.project .design .phone header .left-side img{
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.project .design .phone header .left-side .info{
+    display: flex;
+    gap: 10px;
+    padding-top:5px;
+}
+.project .design .phone header .left-side .name{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: flex-start;
+    gap: 0px;
+}
+.project .design .phone header .left-side .name h2{
+    font-size: 12px;
+    cursor: pointer;
+}
+.project .design .phone header .left-side .name p{
+    font-size: 6px;
+    cursor: default;
+}
+.project .design .phone header .right-side{
+    
+}
+.project .design .phone header .right-side .dots i{
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+}
+.project .design .phone main{
+    display: flex;
+    flex-direction: column;
+}
+.project .design .phone main .first-msg{
+    font-size: 10px;
+    padding: 10px;
+}
+.project .design .phone main .first-msg p{
+    font-size: 10px;
+    padding: 5px 10px;
+    width: 160px;
+    background-color:hsl(270, 20%, 90%);
+    color: var(--Moderate-Violet);
+    border-radius: 10px;
+}
+.project .design .phone main .first-msg p:first-child{
+    margin-bottom: 10px;
+}
+.project .design .phone main .second-msg{
+    padding: 10px;
+    align-self: flex-end;
+}
+.project .design .phone main .second-msg img{
+    width: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.project .design .phone main .third-msg{
+    font-size: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.project .design .phone main .third-msg p{
+    font-size: 10px;
+    padding: 5px 10px;
+    width: 160px;
+    background-color:white;
+    color: var(--Desaturated-Dark-Violet);
+    border-radius: 10px;
+}
+.project .design .phone main .third-msg p:first-child{
+    margin-bottom: 10px;
+}
+.project .design .phone main .third-msg p:last-child{
+    width: fit-content;
+}
+.project .design .phone main .fourth-msg{
+    font-size: 10px;
+    padding: 10px;
+}
+.project .design .phone main .fourth-msg p{
+    font-size: 10px;
+    padding: 5px 10px;
+    width: 160px;
+    background-color:hsl(270, 20%, 90%);
+    color: var(--Moderate-Violet);
+    border-radius: 10px;
+}
+.project .design .phone main .fifth-msg{
+    font-size: 10px;
+    padding: 10px;
+}
+.project .design .phone main .fifth-msg form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 170px;
+    color: white;
+}
+.project .design .phone main .fifth-msg form .minute,
+.project .design .phone main .fifth-msg form .hour{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 15px;
+    background-image: linear-gradient(to right , var(--Light-Magenta), var(--Light-Violet) );
+    border-radius: 10px;
+}
+.project .design .phone main .fifth-msg form .box{
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+.project .design .phone main .fifth-msg form .box::before{
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.project .design .phone main .fifth-msg label,
+.project .design .phone main .fifth-msg h3{
+    padding-left: 20px;
+}
+.project .design .phone main .fifth-msg label{
+    position: relative;
+    cursor: pointer;
+}
+.project .design .phone main .fifth-msg label::before{
+    content: "";
+    position: absolute;
+    background-color: var(--Light-Violet);
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+.project .design .phone main .fifth-msg form .box input[type="radio"]:checked +label::before{
+    display: block;
+}
+.project .design .phone main .fifth-msg form .box input[type="radio"]{
+    display: none;
+}
+.project .design .phone footer{
+    padding: 10px;
+}
+.project .design .phone footer form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.project .design .phone footer input{
+    font-size: 10px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+}
+.project .design .phone footer label{
+    padding: 8px;
+    background-color: var(--Very-Dark-Desaturated-Violet);
+    border-radius: 50%;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+}
+.project .txt{
+    width:450px;
+}
+@media(max-width:767px){
+    .project .txt{
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+}
+.project .txt h4{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: var(--Very-Dark-Desaturated-Violet);
+}
+.project .txt p{
+    line-height: 2;
+    color: var(--Dark-Grayish-Violet);
+}
+@media(max-width:767px){
+    .project .txt p{
+        font-size: 14px;
+    }
+}
